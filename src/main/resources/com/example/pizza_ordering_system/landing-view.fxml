@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pizza_ordering_system.LandingController">
+    <children>
+        <Label layoutX="19.0" layoutY="14.0" text="Pizza Ordering System">
+            <font>
+                <Font name="System Bold" size="45.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="0.5829383886255924" endY="1.0" startX="0.5829383886255924">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.6710526347160339" green="0.10873538255691528" blue="0.10873538255691528" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+      <TextField fx:id="nameField" layoutX="25.0" layoutY="91.0" promptText="Your Name" />
+      <TextField fx:id="phoneNumField" layoutX="193.0" layoutY="91.0" promptText="Your Phone Number" />
+        <ComboBox fx:id="comboBoxId" layoutX="25.0" layoutY="140.0" promptText="Choose Pizza size" visibleRowCount="5">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="S" />
+                    <String fx:value="M" />
+                    <String fx:value="L" />
+                    <String fx:value="XL" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+      <TextField fx:id="toppingsField" layoutX="193.0" layoutY="140.0" promptText="Number of Toppings" />
+
+        <Button layoutX="359.0" layoutY="140.0" mnemonicParsing="false" onAction="#insertPizza" text="Add to bag" />
+
+        <TableView fx:id="pizzaTable_view" layoutX="25.0" layoutY="217.0" prefHeight="200.0" prefWidth="315.0">
+            <columns>
+                <TableColumn fx:id="pidTView" prefWidth="90.0" text="Pizza Number" />
+                <TableColumn fx:id="nameTView" prefWidth="70.0" text="Pizza Eater" />
+                <TableColumn fx:id="sizeTView" prefWidth="65.0" text="Pizza Size" />
+                <TableColumn fx:id="toppingsTView" prefWidth="90.0" text="Pizza Toppings" />
+            </columns>
+        </TableView>
+        <TextField fx:id="pizzaNumberCRUDField" layoutX="25.0" layoutY="419.0" prefHeight="25.0" prefWidth="88.0" promptText="pizza number" />
+      <TextField fx:id="NameCRUDField" layoutX="113.0" layoutY="419.0" prefHeight="25.0" prefWidth="69.0" promptText="Name" />
+        <ComboBox fx:id="comboBoxCRUDField" layoutX="174.0" layoutY="444.0" prefHeight="25.0" prefWidth="99.0" promptText="Pizza size" visibleRowCount="5">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="S" />
+                    <String fx:value="M" />
+                    <String fx:value="L" />
+                    <String fx:value="XL" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <TextField fx:id="ToppingCRUDField" layoutX="251.0" layoutY="419.0" prefHeight="25.0" prefWidth="88.0" promptText="No. of Toppings" />
+      <Label layoutX="25.0" layoutY="200.0" text="Your bag:" />
+      <Button layoutX="211.0" layoutY="474.0" mnemonicParsing="false" onAction="#updatePizza" text="Change" />
+      <Button layoutX="100.0" layoutY="474.0" mnemonicParsing="false" onAction="#deletePizza" text="Delete" />
+      <Button layoutX="383.0" layoutY="474.0" mnemonicParsing="false" onAction="#checkoutPizza" text="Checkout" />
+      <Label fx:id="errorMessage" layoutX="19.0" layoutY="503.0" prefHeight="17.0" prefWidth="464.0" />
+
+    </children>
+</AnchorPane>
