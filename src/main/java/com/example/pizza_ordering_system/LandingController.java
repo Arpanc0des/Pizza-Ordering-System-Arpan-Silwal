@@ -33,7 +33,7 @@ public class LandingController implements Initializable {
     public TableColumn<PizzaORM, String> nameTView;
     public TableColumn<PizzaORM, String> sizeTView;
     public TableColumn<PizzaORM, Integer> toppingsTView;
-    ObservableList<PizzaORM> list = FXCollections.observableArrayList();
+    public ObservableList<PizzaORM> list = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pidTView.setCellValueFactory(new PropertyValueFactory<>("pidORM"));
@@ -111,7 +111,7 @@ public class LandingController implements Initializable {
             errorMessage.setText("Error: SQL Exception occurred.");
         }
     }
-    private double calculateTotalBill() {
+    public double calculateTotalBill() {
         String pizzaSize = comboBoxId.getValue().toString();
         int toppings = Integer.parseInt(toppingsField.getText());
         double basePrice = 0.0;
@@ -216,7 +216,7 @@ public class LandingController implements Initializable {
             Scene scene = new Scene(loader.load());
             Stage checkoutStage = new Stage();
             checkoutStage.setScene(scene);
-            Stage currentStage = (Stage) nameField.getScene().getWindow(); // Assuming nameField is a node in your current scene
+            Stage currentStage = (Stage) nameField.getScene().getWindow();
             currentStage.close();
             checkoutStage.show();
         } catch (IOException e) {
